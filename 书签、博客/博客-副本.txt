@@ -1,0 +1,26 @@
+
+    当你需要往数据表中添加数据，如果少量，手动添加其实没什么问题。但是当你需要测试大量数据时，比如要统计一年、一个月、一个星期的数据的区别，而且需求是必须每天都要有数据，这时就需要批量添加数据。在这里以user表为例，记录如何添加数据。
+    
+方法一：使用excel表格
+方法二：使用insert语句（FileWriter批量写入）
+
+
+
+-------------------
+
+##使用excel表格
+1.打开数据表，按照表的字段在excel中添加数据。注意：表中字段名必须和excel中的名称一致。
+![这里写图片描述](http://img.blog.csdn.net/20170729150955477?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvWVlzdHJvbmc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+2.打开navicat，在表结构处右键选择“导入向导”，选择excel文件，找到excel文件所在的位置。注意：一个excel表格里可以有多个sheet，所以如果全选中的话，可以一次性分别导入多个数据表，但是一定要保证字段名不要错，否则导入的时候会显示错误。
+![这里写图片描述](http://img.blog.csdn.net/20170729152121031?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvWVlzdHJvbmc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+## 使用insert语句（FileWriter批量写入）
+    定义一个写语句到文件的方法，在for循环里面定义自己需要的格式。在这里笔者想让时间变化，于是写了一个让时间减一的方法，其实在这张表里时间无所谓，但是在文章开头笔者有提到，当需要添加一年的数据时，或者某一段时间的每一天都要添加时，就有必要定义这个方法了。
+``` java
+
+```
+   执行之后，在f盘的根目录下就会创建一个user.txt的文件夹，里面有insert语句，然后在navicat里面选择ctrl+q打开执行框，复制进去之后选择运行，同样可以导入数据。
+![这里写图片描述](http://img.blog.csdn.net/20170729155655685?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvWVlzdHJvbmc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+
